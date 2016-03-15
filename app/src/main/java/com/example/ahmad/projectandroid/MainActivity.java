@@ -1,5 +1,4 @@
 package com.example.ahmad.projectandroid;
-
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -25,12 +24,23 @@ import zephyr.android.HxMBT.BTClient;
 import zephyr.android.HxMBT.ZephyrProtocol;
 
 
+ 
+
+
+
+
 public class MainActivity extends AppCompatActivity {
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         Button gotoconnection= (Button) findViewById(R.id.hrbutton);
@@ -42,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        
-    }
 
+    }
+  
 
     public static class heartrate extends Activity {
         /** Called when the activity is first created. */
@@ -111,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
 
                         TextView tv1 = (EditText)findViewById(R.id.labelHeartRate);
                         tv1.setText("000");
+
+
+
 
 
                         tv1 = (EditText)findViewById(R.id.labelInstantSpeed);
@@ -220,7 +233,13 @@ public class MainActivity extends AppCompatActivity {
                         String HeartRatetext = msg.getData().getString("HeartRate");
                         tv = (EditText)findViewById(R.id.labelHeartRate);
                         System.out.println("Heart Rate Info is "+ HeartRatetext);
-                        if (tv != null)tv.setText(HeartRatetext);
+                        if (tv != null)
+                        {
+                            tv.setText(HeartRatetext);
+                            
+
+
+                        }
                         break;
 
                     case INSTANT_SPEED:

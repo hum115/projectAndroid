@@ -30,6 +30,9 @@ public class NewConnectedListener extends ConnectListenerImpl
 		// TODO Auto-generated constructor stub
 
 	}
+	public int getHR(){
+		return HEART_RATE;
+	}
 	public void Connected(ConnectedEvent<BTClient> eventArgs) {
 		System.out.println(String.format("Connected to BioHarness %s.", eventArgs.getSource().getDevice().getName()));
 
@@ -64,7 +67,9 @@ public class NewConnectedListener extends ConnectListenerImpl
 					b1.putString("HeartRate", String.valueOf(HRate));
 					text1.setData(b1);
 					_aNewHandler.sendMessage(text1);
-					System.out.println("Heart Rate is "+ HRate);
+					System.out.println("Heart Rate is " + HRate);
+
+
 
 					//***************Displaying the Instant Speed********************************
 					double InstantSpeed = HRSpeedDistPacket.GetInstantSpeed(DataArray);
